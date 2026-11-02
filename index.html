@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>College Lost and Found Project</title>
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+    
+    .container {
+      max-width: 650px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      padding: 25px 30px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    header {
+      border-bottom: 2px solid #333;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin: 0 0 5px 0;
+      color: #111;
+    }
+    
+    .subhead {
+      font-size: 13px;
+      color: #666;
+      margin: 0;
+    }
+
+    .project-info {
+      background-color: #f9f9f9;
+      border: 1px dashed #aaa;
+      padding: 10px 15px;
+      margin-bottom: 22px;
+      font-size: 13px;
+    }
+    
+    .project-info span {
+      font-weight: bold;
+    }
+
+    form {
+      margin-top: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .radio-group {
+      margin-top: 4px;
+    }
+
+    .radio-group label {
+      display: inline-block;
+      font-weight: normal;
+      margin-right: 25px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .radio-group input[type="radio"] {
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #777;
+      border-radius: 2px;
+      font-size: 14px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid #555;
+      background-color: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    input[type="file"] {
+      font-size: 13px;
+      padding: 4px 0;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .btn-container {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    input[type="submit"] {
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #000;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #444;
+    }
+
+    input[type="reset"] {
+      background-color: #e0e0e0;
+      color: #333;
+      border: 1px solid #999;
+      padding: 10px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-left: 10px;
+    }
+
+    input[type="reset"]:hover {
+      background-color: #d0d0d0;
+    }
+
+    .preview-box {
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+      padding-top: 18px;
+    }
+
+    .preview-box h2 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    table, th, td {
+      border: 1px solid #999;
+    }
+
+    th {
+      background-color: #e9e9e9;
+      padding: 8px;
+      text-align: left;
+    }
+
+    td {
+      padding: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1 class="">Campus Lost and Found Portal</h1>
+<p class="subhead">Web Technology Mini Project • College Student Portal</p>
+</header>
+<div class="project-info">
+<span class="">Project Objective:</span> A simple student portal to report lost or found belongings across campus (ID cards, calculators, keys, books) and contact respective students.
+    </div>
+<!-- Main Entry Form -->
+<form action="#" enctype="multipart/form-data" id="noticeForm" method="post">
+<!-- Status Selection -->
+<div class="form-group">
+<label class="">1. Item Status: <span class="" style="color: red;">*</span></label>
+<div class="radio-group">
+<label class="">
+<input checked="" name="item_type" type="radio" value="lost"/>
+            I Lost an Item
+          </label>
+<label class="">
+<input name="item_type" type="radio" value="found"/>
+            I Found an Item
+          </label>
+</div>
+</div>
+<!-- Item Title -->
+<div class="form-group">
+<label class="" for="item_name">What did you lose / find? <span class="" style="color: red;">*</span></label>
+<input id="item_name" name="item_name" placeholder="e.g. Casio Calculator / Blue Bag / ID Card" required="" type="text"/>
+</div>
+<!-- Picture Upload -->
+<div class="form-group">
+<label class="" for="item_photo">Photo (Optional):</label>
+<input accept="image/*" id="item_photo" name="item_photo" type="file"/>
+<div class="hint">Upload snapshot of the item or location where it was found/lost.</div>
+</div>
+<!-- Description Sentences -->
+<div class="form-group">
+<label class="" for="description">Details &amp; Where: <span class="" style="color: red;">*</span></label>
+<textarea id="description" name="description" placeholder="Describe the item, where you saw/lost it (e.g. 2nd floor library reading hall), and time..." required=""></textarea>
+<div class="hint">Write 2-3 sentences explaining exact location and unique identifying marks.</div>
+</div>
+<!-- Student Details -->
+<div class="form-group">
+<label class="" for="student_contact">Contact / Roll No: <span class="" style="color: red;">*</span></label>
+<input id="student_contact" name="student_contact" placeholder="e.g. Rahul Verma - Roll No. 21CS045 - Ph: 9876543210" required="" type="text"/>
+</div>
+<!-- Action Buttons -->
+<div class="btn-container">
+<input type="submit" value="Submit Notice"/>
+<input type="reset" value="Reset Form"/>
+</div>
+</form>
+<!-- Recent Submissions Table -->
+<div class="preview-box">
+<h2 class="">Recent Campus Notices</h2>
+<table>
+<thead>
+<tr>
+<th class="">Status</th>
+<th class="">Item</th>
+<th class="">Location</th>
+<th class="">Contact / Claim</th>
+</tr>
+</thead>
+<tbody id="noticesTableBody"><tr>
+<td class=""><strong>[LOST]</strong></td>
+<td class="">Casio Calculator (Black)</td>
+<td class="">Room 304, Block B</td>
+<td class="">Roll #21CS045</td>
+</tr>
+<tr>
+<td class=""><strong>[FOUND]</strong></td>
+<td class="">Water Bottle &amp; Keys</td>
+<td class="">Canteen Table #4</td>
+<td class="">Security Desk</td>
+</tr></tbody>
+</table>
+</div>
+<footer>
+<p class="">© 2025 College Lost &amp; Found System • Department of Computer Science • HTML/CSS Mini-Project</p>
+</footer>
+</div>
+<script>
+    document.getElementById("noticeForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Extract values from form
+      var statusType = document.querySelector('input[name="item_type"]:checked').value;
+      var statusBadge = statusType === "lost" ? "[LOST]" : "[FOUND]";
+      var itemName = document.getElementById("item_name").value;
+      var description = document.getElementById("description").value;
+      var contact = document.getElementById("student_contact").value;
+
+      // Create new table row
+      var tableBody = document.getElementById("noticesTableBody");
+      var newRow = document.createElement("tr");
+
+      newRow.innerHTML = 
+        "<td><strong>" + statusBadge + "</strong></td>" +
+        "<td>" + itemName + "</td>" +
+        "<td>" + description + "</td>" +
+        "<td>" + contact + "</td>";
+
+      // Insert at the top of the table body
+      tableBody.insertBefore(newRow, tableBody.firstChild);
+
+      // Reset form and notify user
+      document.getElementById("noticeForm").reset();
+      alert("Notice submitted successfully!");
+    });
+  </script>
+</body></html>
